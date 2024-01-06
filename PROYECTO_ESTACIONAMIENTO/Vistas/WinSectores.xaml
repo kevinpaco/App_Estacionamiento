@@ -1,0 +1,842 @@
+﻿<Window x:Class="Vistas.WinSectores"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:Vistas"
+        Title="Sectores"
+        AllowsTransparency="true"
+        Height="569"
+        Width="950"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        Loaded="Window_Loaded"
+        Background="Transparent"
+        mc:Ignorable="d"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <Border VerticalAlignment="Stretch">
+        <Border.Background>
+            <ImageBrush ImageSource="/Vistas;component/images/fondo.png" />
+        </Border.Background>
+        <Grid Background="#622815A0">
+            <Border BorderBrush="Silver"
+                    Height="30"
+                    HorizontalAlignment="Left"
+                    Name="border1"
+                    VerticalAlignment="Top"
+                    Width="920">
+                <StackPanel  Name="stackPanel3"
+                             Orientation="Horizontal"
+                             HorizontalAlignment="Right">
+                    <Button x:Name="btnMinimize"
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            FontFamily="Arial"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnMinimize_Click"
+                            Margin="0"
+                            MinHeight="0"
+                            HorizontalAlignment="Stretch"
+                            Width="23">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background"
+                                        Value="#28AEED" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver"
+                                             Value="true">
+                                        <Setter Property="Background"
+                                                Value="#278Bef" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="20"
+                                        Height="20"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnClose"
+                            BorderThickness="0"
+                            Content="x"
+                            Foreground="White"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            FontFamily="Arial"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnClose_Click"
+                            Width="28"
+                            HorizontalAlignment="Right">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background"
+                                        Value="#DA34EA" />
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver"
+                                             Value="true">
+                                        <Setter Property="Background"
+                                                Value="#C62DAE" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="20"
+                                        Height="20"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="Silver"
+                    Height="32"
+                    HorizontalAlignment="Left"
+                    Margin="227,36,0,0"
+                    Name="border2"
+                    VerticalAlignment="Top"
+                    Width="450">
+                <Label Content="Gestion de Sectores - Vehiculos en Playa"
+                       Foreground="BurlyWood"
+                       FontFamily="Elephant"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center">
+                </Label>
+            </Border>
+            <Border BorderBrush="Silver"
+                    HorizontalAlignment="Left"
+                    Margin="0,72,0,0"
+                    Name="border3"
+                    VerticalAlignment="Top"
+                    Width="150"></Border>
+            <Border BorderBrush="Silver"
+                    HorizontalAlignment="Right"
+                    Margin="278,72,0,0"
+                    Name="border4"
+                    VerticalAlignment="Top"
+                    Width="150"></Border>
+            <Border BorderBrush="Silver"
+                    Height="137"
+                    HorizontalAlignment="Left"
+                    Margin="6,0,0,6"
+                    Name="border5"
+                    VerticalAlignment="Bottom"
+                    Width="545"></Border>
+            <Grid VerticalAlignment="Top"
+                  Margin="17,389,375,0"
+                  Height="133">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="28*" />
+                    <RowDefinition Height="105*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="79*" />
+                    <ColumnDefinition Width="148*" />
+                    <ColumnDefinition Width="222*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Ocupado"
+                       Height="28"
+                       HorizontalAlignment="Left"
+                       Margin="26,16,0,0"
+                       Name="label1"
+                       VerticalAlignment="Top"
+                       FontWeight="Bold"
+                       FontSize="14"
+                       Grid.ColumnSpan="2"
+                       Grid.RowSpan="2" />
+                <Label Content="Disponible"
+                       Height="28"
+                       HorizontalAlignment="Left"
+                       Margin="26,22,0,0"
+                       Name="label2"
+                       VerticalAlignment="Top"
+                       FontWeight="Bold"
+                       FontSize="14"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="1" />
+                <Label Content="Deshabilitado"
+                       Height="28"
+                       HorizontalAlignment="Left"
+                       Margin="26,56,0,0"
+                       Name="label3"
+                       VerticalAlignment="Top"
+                       FontWeight="Bold"
+                       FontSize="14"
+                       Grid.ColumnSpan="2"
+                       Grid.Row="1" />
+                <Rectangle Height="24"
+                           HorizontalAlignment="Left"
+                           Margin="55,16,0,0"
+                           Name="rectangle1"
+                           Stroke="Black"
+                           VerticalAlignment="Top"
+                           Width="40"
+                           Fill="Red"
+                           Grid.Column="1"
+                           Grid.RowSpan="2" />
+                <Rectangle Height="24"
+                           HorizontalAlignment="Left"
+                           Margin="54,22,0,0"
+                           Name="rectangle2"
+                           Stroke="Black"
+                           VerticalAlignment="Top"
+                           Width="40"
+                           Fill="Lime"
+                           Grid.Column="1"
+                           Grid.Row="1" />
+                <Rectangle Height="24"
+                           HorizontalAlignment="Left"
+                           Margin="54,56,0,0"
+                           Name="rectangle3"
+                           Stroke="Black"
+                           VerticalAlignment="Top"
+                           Width="40"
+                           Fill="Gray"
+                           Grid.Column="1"
+                           Grid.Row="1" />
+                <Button Content="Estado de Sector"
+                        Height="30"
+                        HorizontalAlignment="Left"
+                        Margin="58,14,0,0"
+                        Name="btn"
+                        VerticalAlignment="Top"
+                        Width="128"
+                        FontSize="14"
+                        Click="btnEstado_Sector_Click"
+                        Grid.Column="2"
+                        Grid.RowSpan="2">
+
+                </Button>
+                <Button Content="Salir"
+                        Height="24"
+                        HorizontalAlignment="Left"
+                        Margin="111,56,0,0"
+                        Name="btnSalir"
+                        VerticalAlignment="Top"
+                        Width="75"
+                        FontSize="14"
+                        Click="btnSalir_Click"
+                        Grid.Column="2"
+                        Grid.Row="1">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Grid>
+
+            <StackPanel  Name="stackPanel1"
+                         Margin="20,72,776,156">
+                <Button  BorderBrush="Silver"
+                         BorderThickness="2"
+                         Content="Est 1"
+                         Height="60"
+                         Name="button1"
+                         FontSize="16"
+                         Margin="0"
+                         Padding="2"
+                         Click="button1_Click"
+                         Foreground="White"
+                         FontWeight="Bold">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 2"
+                        Height="60"
+                        Name="button2"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button2_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 3"
+                        Height="60"
+                        Name="button3"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button3_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 4"
+                        Height="60"
+                        Name="button4"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button4_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 5"
+                        Height="60"
+                        Name="button5"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button5_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+            <StackPanel  Name="stackPanel2"
+                         Margin="268,72,507,156">
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 6"
+                        Height="60"
+                        Name="button6"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button6_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 7"
+                        Height="60"
+                        Name="button7"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button7_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 8"
+                        Height="60"
+                        Name="button8"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button8_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 9"
+                        Height="60"
+                        Name="button9"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button9_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 10"
+                        Height="60"
+                        Name="button10"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button10_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+            <StackPanel  Name="stackPanel4"
+                         Margin="472,72,303,156">
+                <Button  BorderBrush="Silver"
+                         BorderThickness="2"
+                         Content="Est 11"
+                         Height="60"
+                         Name="button11"
+                         FontSize="16"
+                         Margin="0"
+                         Padding="2"
+                         Click="button1_Click"
+                         Foreground="White"
+                         FontWeight="Bold">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 12"
+                        Height="60"
+                        Name="butto12"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button2_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 13"
+                        Height="60"
+                        Name="button13"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button3_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 14"
+                        Height="60"
+                        Name="button14"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button4_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 15"
+                        Height="60"
+                        Name="button15"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button5_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+            <StackPanel  Name="stackPanel29"
+                         Margin="739,72,20,156">
+                <Button  BorderBrush="Silver"
+                         BorderThickness="2"
+                         Content="Est 16"
+                         Height="60"
+                         Name="button16"
+                         FontSize="16"
+                         Margin="0"
+                         Padding="2"
+                         Click="button1_Click"
+                         Foreground="White"
+                         FontWeight="Bold">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 17"
+                        Height="60"
+                        Name="button17"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button2_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 18"
+                        Height="60"
+                        Name="button18"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button3_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 19"
+                        Height="60"
+                        Name="button19"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button4_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Foreground="White"
+                        FontWeight="Bold"
+                        Content="Est 20"
+                        Height="60"
+                        Name="button20"
+                        FontSize="16"
+                        BorderBrush="Silver"
+                        BorderThickness="2"
+                        Click="button5_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="10">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+            <TextBox x:Name="infoTextBlock"
+                     Visibility="Collapsed"
+                     Height="116"
+                     IsReadOnly="True"
+                     HorizontalAlignment="Left"
+                     Margin="579,403,0,0"
+                     TextWrapping="Wrap"
+                     VerticalAlignment="Top"
+                     Width="340" />
+           
+            <Label Content="Informacion del sector:"
+                   Height="44"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Left"
+                   Margin="571,373,0,0"
+                   Name="label4"
+                   VerticalAlignment="Top"
+                   Width="230" />
+        </Grid>
+    </Border>
+
+</Window>

@@ -1,0 +1,122 @@
+﻿<Window x:Class="Vistas.WinModificarUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WinModificarUser" Height="427" Width="395" WindowStyle="None" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+    <Border>
+        <Border.Background>
+            <ImageBrush ImageSource="/images/app_customers.jpg" 
+                        Stretch="Fill" />
+        </Border.Background>
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush>
+                    <GradientStop Color="#462AD8" Offset="0" />
+                    <GradientStop Color="#DA34AE" Offset="0.75" />
+                    <GradientStop Color="#462AD8" Offset="1" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1"
+                                     EndPoint="1,0">
+                    <GradientStop Color="#060531"
+                                  Offset="0" />
+                    <GradientStop Color="#622815A0"
+                                  Offset="0.75" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!-- NAV -->
+                    <RowDefinition Height="32" />
+                    <!-- CONTENIDO -->
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+
+                <!-- TITULO PRINCIPAL -->
+                <Label Name="tituloForm" Content="Modificar usuario" Foreground="BurlyWood"  HorizontalAlignment="Center"
+                       FontFamily="Elephant" FontSize="18" VerticalAlignment="Center"
+                       Grid.ColumnSpan="4">
+                </Label>
+
+                <!-- BOTON MINIMIZAR -->
+                <Button x:Name="btnMinimize" BorderThickness="0" Content="-" Cursor="Hand" Grid.Column="1" Margin="0,5"
+                        Click="btnMinimize_Click" Style="{StaticResource btn_minimizar}"/>
+
+                <!-- BOTON CERRAR -->
+                <Button x:Name="btnClose" BorderThickness="0" Content="x" Cursor="Hand" Grid.Column="2" Margin="0,5"                     
+                        Click="btnClose_Click" Style="{StaticResource btn_cerrar}"/>
+
+                <!-- CONTENIDO PRINCIPAL -->
+                <Grid Grid.Row="1" Margin="20,20,9,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Formulario de alta -->
+                    <StackPanel Grid.Row="1" Margin="0,0,-20,0" Grid.RowSpan="2">
+                        <!-- User Name -->
+
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="0,10"  Height="25">
+                            <Label Content="USER NAME:" Width="85" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                       FontWeight="Bold" Foreground="White"/>
+                            <TextBox Name="txtUname" Width="198" MaxLength="8"/>
+
+                        </StackPanel>
+
+                        <!-- Password -->
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="0,10"  Height="25">
+                            <Label Content="PASSWORD:" Width="85" VerticalAlignment="Center" FontWeight="Bold"
+                                       Foreground="White" />
+                            <TextBox Name="txtPass" Width="200"></TextBox>
+                        </StackPanel>
+
+                        <!-- Apellido -->
+                        <StackPanel Orientation="Horizontal" Margin="0,10" Height="25">
+                            <TextBlock Text="APELLIDO:" Width="85" VerticalAlignment="Center" FontWeight="Bold"
+                                       Foreground="White" />
+                            <TextBox Name="txtApe" Width="200" />
+                        </StackPanel>
+
+                        <!-- Nombre -->
+                        <StackPanel Orientation="Horizontal" Margin="0,10" Height="25">
+
+                            <TextBlock Text="NOMBRE:" Width="85" VerticalAlignment="Center" FontWeight="Bold"
+                                       Foreground="White" />
+                            <TextBox Name="txtNombre" Width="200" MaxLength="10"/>
+                        </StackPanel>
+                        <!-- Rol -->
+                        <StackPanel Orientation="Horizontal" Margin="0,10" Height="25">
+
+                            <TextBlock Text="ROL:" Width="85" VerticalAlignment="Center" FontWeight="Bold"
+                                       Foreground="White" />
+                            <TextBox Name="txtRol" Width="200" MaxLength="10"/>
+                        </StackPanel>
+                        <!-- Botones -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20" Width="230" Height="38">
+
+                            <Button Name="btnGuardar" Content="Guardar" Style="{StaticResource btn_form_cliente}" Click="btnGuardar_Click" />
+                            <Button Name="btnCancelar" Content="Cancelar" Style="{StaticResource btn_form_cliente}" Width="123" />
+
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Espacio para mostrar mensajes de error u otros mensajes -->
+                    <TextBlock Name="MessageTextBlock" Grid.Row="2" Foreground="Red" HorizontalAlignment="Center" />
+
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+</Window>

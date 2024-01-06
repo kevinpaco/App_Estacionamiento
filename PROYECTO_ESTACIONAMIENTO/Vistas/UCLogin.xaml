@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Vistas.UCLogin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="500">
+    <Grid>
+
+        <!-- Un StackPanel se utiliza para organizar los controles verticalmente -->
+        <StackPanel>
+            <!-- Etiqueta para el campo UserName -->
+            <Label Content="UserName"
+                   HorizontalAlignment="Center"
+                   FontSize="18"
+                   Height="31"
+                   Foreground="Green"
+                   FontWeight="Bold"
+                   FontStyle="Italic"
+                   FontStretch="Normal" />
+            <!-- TextBox para ingresar el nombre de usuario -->
+            <TextBox x:Name="txtUser"
+                     Foreground="White"
+                     FontSize="15"
+                     FontWeight="Medium"
+                     BorderThickness="0,0,0,1"
+                     VerticalAlignment="Center"
+                     Padding="30,0,0,0">
+                <!-- Fondo del TextBox con una imagen de icono de usuario -->
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/images/UserIcon.png"
+                                Stretch="Uniform"
+                                AlignmentX="Left" />
+                </TextBox.Background>
+            </TextBox>
+            <!-- Etiqueta para el campo Password -->
+            <Label Content="Password"
+                   HorizontalAlignment="Center"
+                   FontSize="18"
+                   Height="31"
+                   Foreground="Green"
+                   FontWeight="Bold"
+                   FontStyle="Italic"
+                   FontStretch="Normal" />
+            <!-- PasswordBox para ingresar la contraseña -->
+            <PasswordBox x:Name="txtPass"
+                         PasswordChar="*"
+                         Foreground="white"
+                         FontSize="15"
+                         FontWeight="Medium"
+                         BorderThickness="0,0,0,1"
+                         VerticalAlignment="Center"
+                         Padding="30,0,0,0">
+                <!-- Fondo del PasswordBox con una imagen de un candado -->
+                <PasswordBox.Background>
+                    <ImageBrush ImageSource="/images/IconLock.png"
+                                Stretch="Uniform"
+                                AlignmentX="Left" />
+                </PasswordBox.Background>
+            </PasswordBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

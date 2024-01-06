@@ -1,0 +1,41 @@
+﻿<Window x:Class="Vistas.VistaPreviaDeImpresion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:coleccionUsuario="clr-namespace:ClasesBase;assembly=ClasesBase"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        Title="VistaPreviaDeImpresion" Height="366" Width="474">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="list_user" ObjectType="{x:Type coleccionUsuario:TrabajarUsuarios}" MethodName="TraerUsuario" />
+        <CollectionViewSource x:Key="vista_user" Source="{StaticResource ResourceKey=list_user}" >
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="user_userName" Direction="Ascending"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </Window.Resources>
+    
+        <StackPanel  >
+        
+        <FlowDocumentReader Canvas.Left="12" Canvas.Top="28" Height="250" >
+            <FlowDocument Name="DocMain">
+                <Paragraph>Listado de Usuarios</Paragraph>
+                <BlockUIContainer>
+            <ListView ItemsSource="{Binding Source={StaticResource ResourceKey=vista_user}}">
+                  <ListView.View>
+                    <GridView>
+                     <GridView.Columns>
+                        <GridViewColumn Header="Apellido" DisplayMemberBinding="{Binding Path=Apellido}" Width="90"></GridViewColumn>
+                        <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding Path=Nombre}" Width="90"></GridViewColumn>
+                        <GridViewColumn Header="Usuario" DisplayMemberBinding="{Binding Path=UserName}" Width="90"></GridViewColumn>
+                        <GridViewColumn Header="Contraseña" DisplayMemberBinding="{Binding Path=Password}" Width="90"></GridViewColumn>
+                      </GridView.Columns>
+                     </GridView>
+                    </ListView.View>
+                   </ListView>
+                </BlockUIContainer>
+            </FlowDocument>
+            
+        </FlowDocumentReader>
+        <Button Name="btnPrint" Content="Imprimir" Click="bntPrint_Click" Width="100" />
+    </StackPanel>
+    
+</Window>

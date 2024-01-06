@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{498F1ED5-58E3-4436-9873-E018C3150261}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vistas</RootNamespace>
+    <AssemblyName>Vistas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ConversorDeEstados.cs" />
+    <Compile Include="DocFijoImprimirVentas.xaml.cs">
+      <DependentUpon>DocFijoImprimirVentas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoSector.xaml.cs">
+      <DependentUpon>EstadoSector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="playaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>playaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TicketSalida.xaml.cs">
+      <DependentUpon>TicketSalida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UCLogin.xaml.cs">
+      <DependentUpon>UCLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ValidarCliente.xaml.cs">
+      <DependentUpon>ValidarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VehiculosEnPlaya.xaml.cs">
+      <DependentUpon>VehiculosEnPlaya.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaPrincipal.xaml.cs">
+      <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VistaPreviaDeImpresion.xaml.cs">
+      <DependentUpon>VistaPreviaDeImpresion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinAcercaDe.xaml.cs">
+      <DependentUpon>WinAcercaDe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinAltaUser.xaml.cs">
+      <DependentUpon>WinAltaUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinClienteABM.xaml.cs">
+      <DependentUpon>WinClienteABM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinClienteAlta.xaml.cs">
+      <DependentUpon>WinClienteAlta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinEstacionamiento.xaml.cs">
+      <DependentUpon>WinEstacionamiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinListadoDeVentas.xaml.cs">
+      <DependentUpon>WinListadoDeVentas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinListadoUsuarios.xaml.cs">
+      <DependentUpon>WinListadoUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinModificarUser.xaml.cs">
+      <DependentUpon>WinModificarUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinRegistrarEntrada.xaml.cs">
+      <DependentUpon>WinRegistrarEntrada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinRegistrarSalida.xaml.cs">
+      <DependentUpon>WinRegistrarSalida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinSectores.xaml.cs">
+      <DependentUpon>WinSectores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinTicketIngreso.xaml.cs">
+      <DependentUpon>WinTicketIngreso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinTicketSalida.xaml.cs">
+      <DependentUpon>WinTicketSalida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinTipoVehiculoABM.xaml.cs">
+      <DependentUpon>WinTipoVehiculoABM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinTipoVehiculoAlta.xaml.cs">
+      <DependentUpon>WinTipoVehiculoAlta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinTipoVehiculoDetalle.xaml.cs">
+      <DependentUpon>WinTipoVehiculoDetalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinTipoVehiculoModificar.xaml.cs">
+      <DependentUpon>WinTipoVehiculoModificar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinTipoVehiculos.xaml.cs">
+      <DependentUpon>WinTipoVehiculos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinUsuariosABM.xaml.cs">
+      <DependentUpon>WinUsuariosABM.xaml</DependentUpon>
+    </Compile>
+    <Page Include="DocFijoImprimirVentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EstadoSector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="TicketSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UCLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ValidarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VehiculosEnPlaya.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VistaPreviaDeImpresion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinAcercaDe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinAltaUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinClienteABM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinClienteAlta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinEstacionamiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinListadoDeVentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinListadoUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinModificarUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinRegistrarEntrada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinRegistrarSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinSectores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTicketIngreso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTicketSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTipoVehiculoABM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTipoVehiculoAlta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTipoVehiculoDetalle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTipoVehiculoModificar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinTipoVehiculos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUsuariosABM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="images\app.config" />
+    <None Include="playaDataSet.xsc">
+      <DependentUpon>playaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="playaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>playaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="playaDataSet.xss">
+      <DependentUpon>playaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\IconLock.png" />
+    <Resource Include="images\UserIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClasesBase\ClasesBase.csproj">
+      <Project>{63CC1690-8FD3-4974-B2D1-AB863C3AD114}</Project>
+      <Name>ClasesBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ResourceDictionary\ResourceDictionary.csproj">
+      <Project>{3769B6A7-1CD1-4B61-88C1-DD332372A515}</Project>
+      <Name>ResourceDictionary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\logotipo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\app_customers.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\app_vehicles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\app_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tiempos.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="audios\sonido1.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="videos\video1.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,6 @@
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache

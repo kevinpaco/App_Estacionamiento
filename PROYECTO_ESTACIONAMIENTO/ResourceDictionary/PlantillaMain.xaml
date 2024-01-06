@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--botones formulario alta vehiculo-->
+    
+    <ControlTemplate x:Key="btn_form" TargetType="{x:Type Button}">
+        <Border x:Name="border"
+                        BorderThickness="1"
+                        Background="#007ACC"
+                        BorderBrush="#007ACC"
+                        CornerRadius="15"
+                        Padding="2,5">
+            <TextBlock Text="{TemplateBinding Content}"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Foreground="White"
+                               FontSize="13"
+                               FontWeight="Bold"/>
+            
+            
+        </Border>
+       
+    </ControlTemplate>
+
+    <Style x:Key="btn_form_alta_vehiculo" TargetType="{x:Type Button}">
+        <Setter Property="Template" Value="{StaticResource ResourceKey=btn_form}"/>
+
+        <Setter Property="Button.FontWeight" Value="Bold"/>
+        <Setter Property="Button.FontSize" Value="13" />
+        <Setter Property="Button.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="100" Height="30" CornerRadius="15" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Button.Background" Value="#7052ff" />
+        <Style.Triggers>
+            <Trigger Property="Button.IsMouseOver" Value="true">
+                <Setter Property="Button.Background" Value="yellow"/>
+                <Setter Property="FontWeight" Value="ExtraBold"/>
+                <Setter Property="Foreground" Value="Red"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>

@@ -1,0 +1,101 @@
+﻿<Window x:Class="Vistas.WinRegistrarSalida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WinRegistrarSalida"
+         xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
+        WindowStartupLocation="CenterScreen"  Height="300" Width="319">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="desVehiculo"  ObjectType="{x:Type svc:TrabajarTiposVehiculo}" MethodName="TraerTiposVehiculo"/>
+    </Window.Resources>
+    <!--Estacionamiento-->
+    <TabControl  Name="tabControl1" Background="#002815A0" OpacityMask="Black" Height="398">
+
+        <TabItem Header="Registrar Salida" Name="tabItem1" Height="22">
+            <Grid>
+                <Grid Margin="10" Height="358" Name="formSalida">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="58*" />
+                        <ColumnDefinition Width="64*" />
+                        <ColumnDefinition Width="130*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <!-- Para la Entrada: -->
+                    <Label Content="Fecha de Salida:" HorizontalAlignment="Left" Width="252" Grid.ColumnSpan="3" />
+                    <DatePicker Grid.Row="1"
+                    Name="datePickerFecha"
+                    Margin="0,5" Grid.ColumnSpan="3" />
+                    <!-- Para el Cliente -->
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3">
+                        <Label Content="Hora de Salida :" Margin="0,0,3,0" />
+                        <TextBox Name="txthoras" Margin="0,5,0,5" Width="123" />
+                    </StackPanel>
+                    <!-- Para el Vehículo: -->
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3">
+                        <Label Content="Duracion:" Margin="32,0,3,0" />
+                        <TextBox Name="txtduracion" Margin="0,5,0,5" Width="124" />
+                    </StackPanel>
+                    <!-- Para la Tarifa y Total: -->
+                    <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.ColumnSpan="3">
+                        <Label Content="Total a Pagar: " Margin="12,0,0,0" />
+                        <TextBox  Name="txtpag" Margin="0,0,3,0" Width="126" Height="19" />
+                    </StackPanel>
+                    <!-- Para el Sector: -->
+                    <Label Content="Zona:"
+               Grid.Row="12"
+               Margin="0,7,58,99" />
+                    <Label Content="Sector:"
+                 Grid.Row="12"
+               Margin="51,8,79,98" Grid.Column="2" />
+                    <!-- Para Registrarlo: -->
+                    <Button Content="Registrar Salida"
+                Grid.Row="12"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="5,30,0,0"
+                Height="35"
+                Width="106" Grid.Column="2" Click="Button_Click" />
+                </Grid>
+                <Label Content="SECTOR DESHABILITADO" Grid.ColumnSpan="3" Grid.Row="12" Height="34" HorizontalAlignment="Left" Margin="12,50,0,0" Name="des" VerticalAlignment="Top" Width="228" Foreground="#FFE10000" FontWeight="Bold" FontStyle="Italic" FontSize="18" />
+                <Label Content="SECTOR LIBRE" Height="34" HorizontalAlignment="Left" Margin="63,50,0,0" Name="hab" VerticalAlignment="Top" Width="143" Foreground="#FF19A324" FontWeight="Bold" FontStyle="Italic" FontSize="18" />
+            </Grid>
+        </TabItem>
+        <TabItem Header="Opciones" Name="tabItem2" Height="22">
+            <Grid Margin="10" Height="358" Name="formopcion">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Name="secHabilitar" Grid.Row="1">
+                    <Label Margin="0,0,20,0">Desea habilitar el Sector:</Label>
+                    <Button Content="Habilitar Sector" Height="30" Name="button1" Width="101" Click="button1_Click" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Name="secDeshabilitar" Grid.Row="2">
+                    <Label Height="30" Margin="0,5,0,0">Desea Deshabilitar el Sector:</Label>
+                    <Button Content="Deshabilitar Sector" Margin="0,05,0,0" Height="27" Name="button2" Width="101" Click="button2_Click" />
+                </StackPanel>
+            </Grid>
+
+
+
+        </TabItem>
+    </TabControl>
+</Window>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="Vistas.TicketSalida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TicketSalida"
+        xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
+        WindowStartupLocation="CenterScreen"  Height="528"
+        Width="400" Loaded="Window_Loaded">
+   <FixedDocument>
+        <PageContent>
+            <FixedPage>
+           
+    
+    <Grid Margin="10"
+          Height="442">
+        <TextBlock Name="txbTitle" HorizontalAlignment="Center" Margin="99,20,99,400">PLAYA DE ESTACIONAMIENTO</TextBlock>
+        <TextBlock Name="txbDireccion" HorizontalAlignment="Center" Margin="28,53,264,369">Balcarce 321</TextBlock>
+        <TextBlock Name="txbCuit" HorizontalAlignment="Center" Margin="204,53,28,369" Width="126">CUIT: 30-32423147-13</TextBlock>
+        <TextBlock Name="txbCiudad" HorizontalAlignment="Center" Margin="28,79,266,343">S.S. de Jujuy</TextBlock>
+        <TextBlock Name="txbIIBB" HorizontalAlignment="Center" Margin="242,79,70,343">IIBB: 999</TextBlock>
+        
+        <TextBlock Name="txbNumTicket" HorizontalAlignment="Center" Margin="47,119,79,303" Width="232"></TextBlock>
+        <TextBlock Name="txbCliente" HorizontalAlignment="Center" Margin="49,145,79,277" Width="230">B</TextBlock>
+        <TextBlock Name="txbPatente" HorizontalAlignment="Center" Margin="49,171,79,251" Width="230">C</TextBlock>
+        <TextBlock Name="txbIngreso" HorizontalAlignment="Right" Margin="0,197,79,225" Width="230">D</TextBlock>
+        <TextBlock Name="txbSalida" HorizontalAlignment="Center" Margin="51,221,79,201" Width="228">E</TextBlock>
+        <TextBlock Name="txbDuracion" HorizontalAlignment="Right" Margin="0,247,79,175" Width="228">F</TextBlock>
+        <TextBlock Name="txbHoras" HorizontalAlignment="Center" Margin="51,278,79,144" Width="228">G</TextBlock>
+        <TextBlock Name="txbTipoVehiculo" HorizontalAlignment="Center" Margin="49,304,79,118" Width="230">H</TextBlock>
+        <TextBlock Name="txbTarifa" HorizontalAlignment="Center" Margin="49,335,79,87" Width="230">I</TextBlock>
+        <TextBlock Name="txbImporte" HorizontalAlignment="Center" Margin="49,365,79,57" Width="230">J</TextBlock>
+    </Grid>
+           </FixedPage>
+        </PageContent>
+    </FixedDocument> 
+</Window>

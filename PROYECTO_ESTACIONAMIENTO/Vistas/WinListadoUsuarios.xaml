@@ -1,0 +1,93 @@
+﻿<Window x:Class="Vistas.WinListadoUsuarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:coleccionUsuario="clr-namespace:ClasesBase;assembly=ClasesBase"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WinListadoUsuarios" Height="300" Width="396" WindowStyle="None" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="list_user" ObjectType="{x:Type coleccionUsuario:TrabajarUsuarios}" MethodName="TraerUsuario" />
+        <CollectionViewSource x:Key="vista_user" Source="{StaticResource ResourceKey=list_user}" Filter="filterUser">
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="user_userName" Direction="Descending"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </Window.Resources>
+    <Border>
+        <Border.Background>
+            <ImageBrush ImageSource="/images/app_customers.jpg" 
+                        Stretch="Fill" />
+        </Border.Background>
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush>
+                    <GradientStop Color="#462AD8" Offset="0" />
+                    <GradientStop Color="#DA34AE" Offset="0.75" />
+                    <GradientStop Color="#462AD8" Offset="1" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1"
+                                     EndPoint="1,0">
+                    <GradientStop Color="#060531"
+                                  Offset="0" />
+                    <GradientStop Color="#622815A0"
+                                  Offset="0.75" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!-- NAV -->
+                    <RowDefinition Height="32" />
+                    <!-- CONTENIDO -->
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+
+                <!-- TITULO PRINCIPAL -->
+                <Label Name="tituloForm" Content="Filtrar Usuarios" Foreground="BurlyWood"  HorizontalAlignment="Center"
+                       FontFamily="Elephant" FontSize="18" VerticalAlignment="Center">
+                </Label>
+
+                <!-- BOTON MINIMIZAR -->
+                <Button x:Name="btnMinimize" BorderThickness="0" Content="-" Cursor="Hand" Grid.Column="1" Margin="0,5"
+                        Click="btnMinimize_Click" Style="{StaticResource btn_minimizar}"/>
+
+                <!-- BOTON CERRAR -->
+                <Button x:Name="btnClose" BorderThickness="0" Content="x" Cursor="Hand" Grid.Column="2" Margin="0,5"                     
+                        Click="btnClose_Click" Style="{StaticResource btn_cerrar}"/>
+
+                <!-- CONTENIDO PRINCIPAL -->
+                <Grid Grid.Row="1" Margin="20,20,1,20" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                   
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,32" Grid.RowSpan="2">
+                        <StackPanel Orientation="Horizontal"  Margin="0,0,0,6" HorizontalAlignment="Center">
+                            <Label Content="User Name"/>
+                             <TextBox Name="txtfilter" Width="155" TextChanged="txtfilter_TextChanged" />
+                        </StackPanel>                      
+                        <ListView Name="lts_user"   ItemsSource="{Binding Source={StaticResource vista_user}}" >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="Username" Width="100" DisplayMemberBinding="{Binding UserName}"/>
+                                    <GridViewColumn Header="Nombre" Width="100" DisplayMemberBinding="{Binding Nombre}"/>
+                                    <GridViewColumn Header="Rol" Width="100" DisplayMemberBinding="{Binding Rol}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+</Window>

@@ -1,0 +1,9 @@
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\bin\Debug\ResourceDictionary.dll
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\bin\Debug\ResourceDictionary.pdb
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\obj\Debug\PlantillaMain.baml
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\obj\Debug\ResourceDictionary_MarkupCompile.cache
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\obj\Debug\ResourceDictionary.g.resources
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\obj\Debug\ResourceDictionary.Properties.Resources.resources
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\obj\Debug\ResourceDictionary.csproj.GenerateResource.Cache
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\obj\Debug\ResourceDictionary.dll
+C:\Users\PC\Documents\LPOOII-Grupo10\LPOOII_GRUPO10\ResourceDictionary\obj\Debug\ResourceDictionary.pdb

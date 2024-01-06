@@ -1,0 +1,134 @@
+﻿<Window x:Class="Vistas.WinEstacionamiento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Estacionamiento"
+        Background="Transparent"
+        AllowsTransparency="false"
+        Height="548"
+        Width="950"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen" 
+        Loaded="Window_Loaded">
+    <Grid>
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush>
+                    <GradientStop Color="#462AD8"
+                                  Offset="0" />
+                    <GradientStop Color="#DA34AE"
+                                  Offset="0.75" />
+                    <GradientStop Color="#462AD8"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1"
+                                     EndPoint="1,0">
+                    <GradientStop Color="#060531"
+                                  Offset="0" />
+                    <GradientStop Color="#622815A0"
+                                  Offset="0.75" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!-- NAV -->
+                <RowDefinition Height="32" />
+                <!-- CONTENIDO -->
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="5" />
+            </Grid.ColumnDefinitions>
+
+            <!-- TITULO PRINCIPAL -->
+            <Label Content="Gestion de Estacionamientos"
+                       Foreground="BurlyWood"
+                       HorizontalAlignment="Center"
+                       FontFamily="Elephant"
+                       FontSize="18"
+                       VerticalAlignment="Center" Margin="43,0,20,0">
+            </Label>
+
+            <!-- BOTON MINIMIZAR -->
+            <Button x:Name="btnMinimize"
+                        BorderThickness="0"
+                        Content="-"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        FontFamily="Arial"
+                        Cursor="Hand"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        Click="btnMinimize_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background"
+                                    Value="#28AEED" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                         Value="true">
+                                <Setter Property="Background"
+                                            Value="#278Bef" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="20"
+                                    Height="20"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- BOTON CERRAR -->
+            <Button x:Name="btnClose"
+                        BorderThickness="0"
+                        Content="x"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        FontFamily="Arial"
+                        Cursor="Hand"
+                        Grid.Column="2"
+                        Click="btnClose_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background"
+                                    Value="#DA34EA" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                         Value="true">
+                                <Setter Property="Background"
+                                            Value="#C62DAE" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="20"
+                                    Height="20"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

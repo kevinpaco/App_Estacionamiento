@@ -1,0 +1,51 @@
+﻿<Window x:Class="Vistas.EstadoSector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:svc="clr-namespace:Vistas"
+        Title="EstadoSector"  AllowsTransparency="true" Height="229" Width="365" WindowStyle="None" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown">
+    <Window.Resources>
+        <XmlDataProvider x:Key="Tiempo" XPath="/tiempos">
+            <x:XData>
+                <tiempos xmlns="">
+                    <tiempo value="0"/>
+                    <tiempo value="15"/>
+                    <tiempo value="30"/>
+                    <tiempo value="60"/>
+                    <tiempo value="90"/>
+                    <tiempo value="120"/>
+                </tiempos>
+            </x:XData>
+        </XmlDataProvider>
+        <svc:ConversorDeEstados x:Key="Idconversor"/>
+    </Window.Resources>
+        <Border VerticalAlignment="Stretch">
+        <Border.Background>
+            <ImageBrush ImageSource="/Vistas;component/images/fondo.png" />
+        </Border.Background>
+        <Grid Background="#622815A0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+                <Border BorderBrush="Silver" Grid.Row="0"  Height="30" HorizontalAlignment="Left" Name="border1" VerticalAlignment="Top" Width="357">
+                <StackPanel  Name="stackPanel3" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnMinimize" Margin="0,5,0,0" Content="-" Cursor="Hand" Click="btnMinimize_Click" Style="{StaticResource btn_minimizar}"/>
+                    <Button x:Name="btnClose" Margin="4,5,0,0" Content="x" Click="btnClose_Click" Style="{StaticResource btn_cerrar}"/>
+                </StackPanel>
+            </Border>
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Foreground="BurlyWood" FontWeight="Bold" FontSize="18">Informacion de Sector</Label>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="109">
+                   <ComboBox Name="cbxTiempo" Width="108" Height="30" ItemsSource="{Binding Source={StaticResource Tiempo}, XPath=tiempo/@value}" />                 
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label>Valor:</Label>
+                    <Rectangle Height="40" Width="46" Fill="{Binding ElementName=cbxTiempo,Path=SelectedValue,Converter={StaticResource Idconversor}}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

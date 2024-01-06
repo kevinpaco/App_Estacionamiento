@@ -1,0 +1,136 @@
+﻿<Window x:Class="Vistas.WinTipoVehiculos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WinTipoVehiculos" Height="376" Width="646" WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown">
+    <Window.Resources>
+        <!--se declara un recurso para acceder al metodo de la clase TrabajarTiposVehiculo-->
+        <ObjectDataProvider x:Key="trabajarVehiculos" ObjectType="{x:Type svc:TrabajarTiposVehiculo}" MethodName="TraerTiposVehiculo"/>
+    </Window.Resources>
+    <Border>
+        <Border.Background>
+            <ImageBrush ImageSource="/images/app_background.jpg" Stretch="Fill"/>
+        </Border.Background>
+        <Border>
+            <Border.BorderBrush>
+                <LinearGradientBrush>
+                    <GradientStop Color="#462AD8"
+                                  Offset="0" />
+                    <GradientStop Color="#DA34AE"
+                                  Offset="0.75" />
+                    <GradientStop Color="#462AD8"
+                                  Offset="1" />
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1"
+                                     EndPoint="1,0">
+                    <GradientStop Color="#060531"
+                                  Offset="0" />
+                    <GradientStop Color="#622815A0"
+                                  Offset="0.75" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!-- NAV -->
+                    <RowDefinition Height="32" />
+                    <!-- CONTENIDO -->
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+
+                <!-- TITULO PRINCIPAL -->
+
+                <Label Content="Tipo de Vehiculos"
+                       Foreground="BurlyWood"
+                       HorizontalAlignment="Center"
+                       FontFamily="Elephant"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       Grid.ColumnSpan="4">
+                </Label>
+
+                <!-- BOTON MINIMIZAR -->
+                <Button x:Name="btnMinimize" Content="-" Cursor="Hand" Grid.Column="1" VerticalAlignment="Center"
+                        Click="btnMinimize_Click" Style="{StaticResource btn_minimizar}" />
+
+                <!-- BOTON CERRAR -->
+                <Button x:Name="btnClose" Content="x" VerticalAlignment="Center" Cursor="Hand" Grid.Column="2"
+                        Click="btnClose_Click" Style="{StaticResource btn_cerrar}"/>
+
+                <!-- CONTENIDO PRINCIPAL -->
+                <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!-- LISTA DE VEHICULOS -->
+                    <DataGrid Name="VehiculosDataGrid" AutoGenerateColumns="False" FontWeight="Bold" 
+                               ItemsSource="{Binding Source={StaticResource trabajarVehiculos}}" Background="#46000000" Height="199" Margin="15,15,6,260">
+
+                        <!-- CABECERAS DEL GRID (int TvCodigo, String Descripcion, decimal Tarifa) -->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Codigo"
+                                                Binding="{Binding Codigo}"
+                                                Width="*"
+                                                IsReadOnly="True">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="HorizontalContentAlignment"
+                                                Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Descripcion"
+                                                Binding="{Binding Descripcion}"
+                                                Width="*"
+                                                IsReadOnly="True">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="HorizontalContentAlignment"
+                                                Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Tarifa"
+                                                Binding="{Binding Tarifa}"
+                                                Width="*"
+                                                IsReadOnly="True">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="HorizontalContentAlignment"
+                                                Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                            </DataGridTextColumn>                           
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <!--MOSTRAR EL TOTAL DE VEHICULOS REGISTRADOS-->
+                    <Label Content="Total registrados: XXXXX"
+                           Height="28"
+                           HorizontalAlignment="Left"
+                           Margin="15,231,0,0"
+                           Name="lblTotalVehiculos"
+                           VerticalAlignment="Top"
+                           Width="143"
+                           FontWeight="Bold"
+                           FontStyle="Italic"
+                           Foreground="White" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Border>
+</Window>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="Vistas.WinTicketSalida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WinTicketSalida" Height="500" Width="300">
+    <FixedDocument>
+        <PageContent>
+            <FixedPage>
+                <StackPanel Orientation="Vertical" >
+                    <StackPanel Orientation="Horizontal" Width="599" HorizontalAlignment="Center" >
+                        <TextBlock Margin="40,0,0,0" Text="Playa de Estacionamiento TP 5" HorizontalAlignment="Right"  FontSize="14" FontWeight="Bold"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="30,0,40,0">Balcarce 200</Label>
+                        <Label>Cuit: 30-12345678</Label>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Margin="30,0,45,0">S.S de Jujuy</Label>
+                        <Label>IIBB: 999</Label>
+                    </StackPanel>
+                    <Line Margin="20,0,0,0" X1="0" Y1="0" X2="300" Y2="0" Stroke="Black" StrokeThickness="2" />
+                    <StackPanel Orientation="Vertical">
+                        <Label Margin="30,0,0,0" Name="lblticket"></Label>
+                        <Label Margin="30,0,0,0" Name="lblnombre"></Label>
+                        <Label Margin="30,0,0,0" Name="lblpatente"></Label>
+                        <Label Margin="30,0,0,0" Name="lblingre"></Label>
+                        <Label Margin="30,0,0,0" Name="lblSalida"></Label>
+                        <Label Margin="30,0,0,0" Name="lbltranscurrido"></Label>
+                        <Label Margin="30,0,0,0" Name="lblhoras"></Label>
+                        <Label Margin="30,0,0,0" Name="lbltv"></Label>
+                        <Label Margin="30,0,0,0" Name="lbltarifa"></Label>
+                    </StackPanel>
+                    <Line Margin="20,0,0,0" X1="0" Y1="0" X2="300" Y2="0" Stroke="Black" StrokeThickness="2" />
+                    <Label Margin="30,0,0,0" Name="lblUsu">Usuario: Operador</Label>
+                </StackPanel>
+            </FixedPage>
+        </PageContent>
+    </FixedDocument>
+</Window>
